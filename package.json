@@ -1,9 +1,14 @@
 {
-  "name": "typescript-lib-template",
+  "name": "react-program",
   "version": "0.1.0",
-  "description": "TypeScript Lib template.",
+  "description": "Create React App Program.",
   "main": "lib/index.js",
   "author": "laamginghong",
+  "keywords": [
+    "React",
+    "CLI",
+    "create react app"
+  ],
   "license": "MIT",
   "bin": {
     "rp": "lib/index.js",
