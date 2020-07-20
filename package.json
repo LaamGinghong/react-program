@@ -2,7 +2,7 @@
   "name": "react-program",
   "version": "0.1.0",
   "description": "Create React App Program.",
-  "main": "lib/index.js",
+  "main": "src/index.ts",
   "author": "laamginghong",
   "keywords": [
     "React",
@@ -11,8 +11,7 @@
   ],
   "license": "MIT",
   "bin": {
-    "rp": "lib/index.js",
-    "rpt": "src/index.ts"
+    "rp": "src/index.ts"
   },
   "scripts": {
     "build": "ts-node --files -P ./tsconfig.json scripts/build.ts",
@@ -33,7 +32,6 @@
   "devDependencies": {
     "@commitlint/cli": "^9.1.1",
     "@commitlint/config-conventional": "^9.1.1",
-    "@types/clean-webpack-plugin": "^0.1.3",
     "@types/friendly-errors-webpack-plugin": "^0.1.2",
     "@types/hard-source-webpack-plugin": "^1.0.1",
     "@types/terser-webpack-plugin": "^3.0.0",
@@ -59,7 +57,6 @@
     "speed-measure-webpack-plugin": "^1.3.3",
     "terser-webpack-plugin": "^3.0.7",
     "ts-loader": "^8.0.1",
-    "ts-node": "^8.10.2",
     "typescript": "^3.9.7",
     "webpack": "^4.43.0",
     "webpack-bundle-analyzer": "^3.8.0",
@@ -67,5 +64,8 @@
     "webpack-dev-server": "^3.11.0",
     "webpack-merge": "^5.0.9",
     "webpackbar": "^4.0.0"
+  },
+  "peerDependencies": {
+    "ts-node": "^8.10.2"
   }
 }

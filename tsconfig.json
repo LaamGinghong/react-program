@@ -6,7 +6,6 @@
     "declaration": true,
     "declarationDir": "./lib",
     "sourceMap": true,
-    "isolatedModules": true,
     "strict": true,
     "alwaysStrict": true,
     "noUnusedLocals": true,
