@@ -2,9 +2,13 @@
   "name": "typescript-lib-template",
   "version": "0.1.0",
   "description": "TypeScript Lib template.",
-  "main": "src/index.ts",
+  "main": "lib/index.js",
   "author": "laamginghong",
   "license": "MIT",
+  "bin": {
+    "rp": "lib/index.js",
+    "rpt": "src/index.ts"
+  },
   "scripts": {
     "build": "ts-node --files -P ./tsconfig.json scripts/build.ts",
     "analyze": "ts-node --files -P ./tsconfig.json scripts/analyze.ts"
