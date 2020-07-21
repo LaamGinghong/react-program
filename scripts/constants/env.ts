@@ -1,4 +1,5 @@
 import path from 'path'
+import process from 'process'
 
 const PROJECT_ROOT = path.resolve(__dirname, '../', '../')
 const PROJECT_NAME = 'TypeScript Lib template'

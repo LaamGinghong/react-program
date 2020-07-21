@@ -3,6 +3,7 @@
 // import path from 'path'
 // import fs from 'fs'
 import { program } from 'commander'
+import process from 'process'
 
 import { init, version } from '../src'
 
