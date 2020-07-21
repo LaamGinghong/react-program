@@ -23,5 +23,8 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: ['@typescript-eslint', 'prettier'],
-  rules: {},
+  rules: {
+    'require-jsdoc': 'off',
+    'no-unused-vars': 'off',
+  },
 }

@@ -11,7 +11,7 @@
   ],
   "license": "MIT",
   "bin": {
-    "rp": "src/index.ts"
+    "rp": "bin/index.ts"
   },
   "scripts": {
     "build": "ts-node --files -P ./tsconfig.json scripts/build.ts",
@@ -32,8 +32,10 @@
   "devDependencies": {
     "@commitlint/cli": "^9.1.1",
     "@commitlint/config-conventional": "^9.1.1",
+    "@types/figlet": "^1.2.0",
     "@types/friendly-errors-webpack-plugin": "^0.1.2",
     "@types/hard-source-webpack-plugin": "^1.0.1",
+    "@types/inquirer": "^6.5.0",
     "@types/terser-webpack-plugin": "^3.0.0",
     "@types/webpack": "^4.41.21",
     "@types/webpack-bundle-analyzer": "^3.8.0",
@@ -43,6 +45,7 @@
     "@typescript-eslint/eslint-plugin": "^3.6.1",
     "@typescript-eslint/parser": "^3.6.1",
     "clean-webpack-plugin": "^3.0.0",
+    "commander": "^6.0.0",
     "eslint": "^7.4.0",
     "eslint-config-google": "^0.14.0",
     "eslint-config-prettier": "^6.11.0",
@@ -67,5 +70,10 @@
   },
   "peerDependencies": {
     "ts-node": "^8.10.2"
+  },
+  "dependencies": {
+    "figlet": "^1.5.0",
+    "inquirer": "^7.3.2",
+    "ora": "^4.0.5"
   }
 }

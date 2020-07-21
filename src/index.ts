@@ -1,3 +1,2 @@
-#!/usr/bin/env ts-node
-
-console.log('hello world')
+export * from './utils'
+export * from './commands'
