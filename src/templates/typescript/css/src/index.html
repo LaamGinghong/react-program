@@ -2,7 +2,16 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Title</title>
+    <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
-  <body></body>
+  <body>
+    <div id="root"></div>
+
+    <!--  cdn 导入   -->
+    <% if(htmlWebpackPlugin.options.cdn) { %>
+      <% for(var url of htmlWebpackPlugin.options.cdn.js) { %>
+        <script src="<%= url %"></script>
+      <% } %>
+    <% } %>
+  </body>
 </html>

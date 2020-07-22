@@ -1,4 +1,5 @@
 import { readFileSync } from 'fs'
+import { env } from 'process'
 
 import { getRootDir } from '../../src'
 
@@ -10,4 +11,6 @@ const projectPackageJson: { [key: string]: any } = JSON.parse(
 
 const PROJECT_NAME = projectPackageJson.name
 
-export { PROJECT_DIR, PROJECT_NAME }
+const IS_DEV = env.NODE_ENV !== 'production'
+
+export { PROJECT_DIR, PROJECT_NAME, IS_DEV }
