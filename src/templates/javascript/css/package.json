@@ -1,7 +1,7 @@
 {
-  "name": "typescript-css",
+  "name": "javascript-css",
   "version": "0.1.0",
-  "main": "src/index.ts",
+  "main": "src/index.js",
   "license": "MIT",
   "private": true,
   "scripts": {
