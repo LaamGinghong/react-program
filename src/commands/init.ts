@@ -2,7 +2,11 @@ import { textSync } from 'figlet'
 import chalk from 'chalk'
 import inquirer, { QuestionCollection } from 'inquirer'
 import ora from 'ora'
-import { mkdirSync } from 'fs'
+import { mkdir, writeFile } from 'fs/promises'
+import { resolve } from 'path'
+import { cwd } from 'process'
+
+import { getPackageJSON, copyDir } from '../utils'
 
 const QUESTION: QuestionCollection = [
   {
@@ -55,20 +59,42 @@ async function init() {
   spin.start('正在依照配置生成对应模版，请稍后...')
 
   const { projectName, isTypeScript, style } = answer
-  let flag = true
-  try {
-    mkdirSync(projectName)
-  } catch {
-    spin.fail(
-      chalk.redBright(
-        `当前项目名 ${chalk.bold(
-          projectName,
-        )} 所对应的文件夹已经存在，请修改项目名或删除原文件夹后重试`,
-      ),
-    )
-    flag = false
-  }
-  if (!flag) return
+  const projectDir = `${cwd()}/${projectName}`
+
+  mkdir(projectDir)
+    .then(null, () => {
+      spin.fail(
+        chalk.redBright(
+          `当前项目名 ${chalk.bold(
+            projectName,
+          )} 所对应的文件夹已经存在，请修改项目名或删除原文件夹后重试`,
+        ),
+      )
+    })
+    .then(() => {
+      const src = resolve(
+        __dirname,
+        '../',
+        'templates',
+        isTypeScript ? 'typescript' : 'javascript',
+        style,
+      )
+      copyDir(src, projectDir)
+    })
+    .then(() => {
+      const packageJSON = getPackageJSON(projectDir)
+      packageJSON.name = projectName
+      return writeFile(`${projectDir}/package.json`, JSON.stringify(packageJSON, null, 2))
+    })
+    .then(null, (reason) => {
+      spin.fail(reason)
+    })
+    .then(() => {
+      spin.succeed(
+        `模版创建成功，开始你的撸码之旅吧 ${chalk.bgRed.bold('   o(*≧▽≦)ツ┏━┓   ')}`,
+      )
+      console.log(chalk.bold.yellowBright(textSync('Hello World!')))
+    })
 }
 
 export default init

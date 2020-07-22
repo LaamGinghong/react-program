@@ -5,13 +5,11 @@
 import { program } from 'commander'
 import process from 'process'
 
-import { init, version } from '../src'
+import { init, serve } from '../src'
 
-program
-  .version(version, '-v, --version', '获取当前项目的版本号')
-  .command('init')
-  .description('初始化项目版本')
-  .action(init)
+program.command('init').description('初始化项目版本').action(init)
+
+program.command('serve').description('启动本地服务').action(serve)
 
 program.option('-h, --help', '帮助文档')
 

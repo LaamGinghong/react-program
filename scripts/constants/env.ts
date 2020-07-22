@@ -1,9 +1,13 @@
-import path from 'path'
-import process from 'process'
+import { readFileSync } from 'fs'
 
-const PROJECT_ROOT = path.resolve(__dirname, '../', '../')
-const PROJECT_NAME = 'TypeScript Lib template'
+import { getRootDir } from '../../src'
 
-const IS_DEV = process.env.NODE_ENV !== 'production'
+const PROJECT_DIR = getRootDir()
 
-export { PROJECT_ROOT, PROJECT_NAME, IS_DEV }
+const projectPackageJson: { [key: string]: any } = JSON.parse(
+  (readFileSync(`${PROJECT_DIR}/package.json`) as any) as string,
+)
+
+const PROJECT_NAME = projectPackageJson.name
+
+export { PROJECT_DIR, PROJECT_NAME }
