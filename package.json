@@ -9,6 +9,7 @@
     "CLI",
     "create react app"
   ],
+  "type": "module",
   "license": "MIT",
   "bin": {
     "rp": "bin/index.ts"
