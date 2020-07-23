@@ -3,13 +3,11 @@
     "target": "es5",
     "module": "CommonJS",
     "lib": ["DOM", "ESNext"],
-    "declaration": true,
-    "declarationDir": "./lib",
-    "sourceMap": true,
+    "outDir": "./lib",
     "strict": true,
     "alwaysStrict": true,
-//    "noUnusedLocals": true,
-//    "noUnusedParameters": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "resolveJsonModule": true,
@@ -22,5 +20,6 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "pretty": true
-  }
+  },
+  "exclude": ["src/templates"]
 }

@@ -1,4 +1,3 @@
-import webpack from 'webpack'
 import ora from 'ora'
 
 import { PROJECT_DIR } from './constants/env'

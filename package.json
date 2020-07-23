@@ -1,6 +1,6 @@
 {
   "name": "react-program",
-  "version": "0.1.0-beta.0",
+  "version": "0.1.0-beta.1",
   "description": "Create React App Program.",
   "main": "src/index.ts",
   "author": "laamginghong",
@@ -9,10 +9,12 @@
     "CLI",
     "create react app"
   ],
-  "type": "module",
   "license": "MIT",
+  "scripts": {
+    "build": "tsc"
+  },
   "bin": {
-    "rp": "bin/index.ts"
+    "rp": "lib/bin/index.js"
   },
   "husky": {
     "hooks": {

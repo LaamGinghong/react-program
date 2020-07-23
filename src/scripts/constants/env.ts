@@ -1,7 +1,7 @@
 import { readFileSync } from 'fs'
 import { env } from 'process'
 
-import { getRootDir } from '../../src'
+import { getRootDir } from '../../index'
 
 const PROJECT_DIR = getRootDir()
 

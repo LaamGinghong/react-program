@@ -3,7 +3,7 @@ import chalk from 'chalk'
 import ora from 'ora'
 
 import { getRootDir } from '../utils'
-import { start } from '../../scripts'
+import { start } from '../scripts'
 
 function serve() {
   const rootDir = getRootDir()
