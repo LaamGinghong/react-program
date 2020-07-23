@@ -6,6 +6,9 @@
   "repository": "git@github.com:/LaamGinghong/react-program.git",
   "author": "LaamGinghong <351390560@qq.com>",
   "license": "MIT",
+  "bin": {
+    "rp": "./bin/index.ts"
+  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
