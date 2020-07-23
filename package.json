@@ -10,6 +10,9 @@
     "create react app"
   ],
   "license": "MIT",
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "build": "tsc"
   },
