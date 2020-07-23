@@ -1,6 +1,6 @@
 #!/usr/bin/env ts-node
 
-import process from 'process'
+import * as process from 'process'
 import { program } from 'commander'
 
 import { init } from '../src'

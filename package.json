@@ -8,6 +8,9 @@
   "bin": {
     "rp": "./bin/index.ts"
   },
+  "scripts": {
+    "build": "tsc"
+  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
