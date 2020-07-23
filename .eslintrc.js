@@ -6,15 +6,22 @@ module.exports = {
     node: true,
   },
   extends: [
-    'standard',
+    'google',
+    'plugin:eslint-comments/recommended',
     'plugin:import/typescript',
+    'plugin:@typescript-eslint/recommended',
     'prettier',
     'prettier/@typescript-eslint',
   ],
   parser: '@typescript-eslint/parser',
   settings: {
     'import/resolver': {
-      typescript: path.resolve(__dirname, 'tsconfig.json'),
+      node: {
+        extensions: ['.ts', '.js', '.json'],
+      },
+      typescript: {
+        directory: [path.resolve(__dirname, 'tsconfig.json')],
+      },
     },
   },
   parserOptions: {
@@ -22,5 +29,11 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: ['@typescript-eslint', 'prettier'],
-  rules: {},
+  rules: {
+    'import/extensions': [
+      2,
+      'ignorePackages',
+      { ts: 'never', tsx: 'never', json: 'never', js: 'never' },
+    ],
+  },
 }
