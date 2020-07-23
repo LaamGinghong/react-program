@@ -2,12 +2,11 @@ const path = require('path')
 
 module.exports = {
   env: {
-    browser: true,
     es2020: true,
+    node: true,
   },
   extends: [
-    'google',
-    'plugin:eslint-comments/recommended',
+    'standard',
     'plugin:import/typescript',
     'prettier',
     'prettier/@typescript-eslint',
@@ -15,7 +14,7 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   settings: {
     'import/resolver': {
-      typescript: path.resolve(__dirname, './tsconfig.json'),
+      typescript: path.resolve(__dirname, 'tsconfig.json'),
     },
   },
   parserOptions: {
@@ -23,8 +22,5 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: ['@typescript-eslint', 'prettier'],
-  rules: {
-    'require-jsdoc': 'off',
-    'no-unused-vars': 'off',
-  },
+  rules: {},
 }
