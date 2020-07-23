@@ -30,10 +30,7 @@ module.exports = {
   },
   plugins: ['@typescript-eslint', 'prettier'],
   rules: {
-    'import/extensions': [
-      2,
-      'ignorePackages',
-      { ts: 'never', tsx: 'never', json: 'never', js: 'never' },
-    ],
+    'require-jsdoc': 'off',
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
   },
 }
