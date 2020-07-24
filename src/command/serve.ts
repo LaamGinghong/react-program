@@ -3,6 +3,7 @@ import ora from 'ora'
 import chalk from 'chalk'
 
 import { getRootDir } from '../utils'
+import { start } from '../scripts'
 
 function serve() {
   const rootDir = getRootDir()
@@ -18,6 +19,7 @@ function serve() {
   }
 
   spin.succeed('服务路径检查完毕，准备启动服务')
+  start()
 }
 
 export default serve
