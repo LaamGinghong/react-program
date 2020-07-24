@@ -1,9 +1,12 @@
-#!/usr/bin/env ts-node
+#!/usr/bin/env node
 
-import * as process from 'process'
+import process from 'process'
 import { program } from 'commander'
+import clear from 'clear'
 
 import { init } from '../src'
+
+clear()
 
 program.command('init').description('初始化项目').action(init)
 

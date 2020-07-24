@@ -32,5 +32,6 @@ module.exports = {
   rules: {
     'require-jsdoc': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
+    'prefer-promise-reject-errors': 'off',
   },
 }

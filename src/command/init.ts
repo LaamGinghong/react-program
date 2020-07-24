@@ -58,18 +58,10 @@ async function init() {
   const { projectName, useTypeScript, style } = answer
   const projectDir = `${cwd()}/${projectName}`
 
-  ora().start('正在依照配置生成对应模版，请稍后...')
+  const spin = ora()
+  spin.start('正在依照配置生成对应模版，请稍后...')
 
   mkdir(projectDir)
-    .then(null, () => {
-      ora().fail(
-        chalk.redBright(
-          `当前项目名${chalk.bold(
-            projectName,
-          )}所对应的文件夹已经存在，请修改项目名称或删除原文件夹后重试`,
-        ),
-      )
-    })
     .then(() => {
       const src = resolve(
         // 模版绝对路径
@@ -87,14 +79,27 @@ async function init() {
       packageJson.name = projectName
       return writeFile(packageJsonRoute, JSON.stringify(packageJson, null, 2))
     })
-    .then(null, (reason) => {
-      ora().fail(reason)
-    })
     .then(() => {
-      ora().succeed(
+      spin.succeed(
         `模版创建成功，开始你的撸码之旅吧 ${chalk.bgRed.bold('   o(*≧▽≦)ツ┏━┓   ')}`,
       )
       console.log(chalk.bold.yellowBright(textSync('Hello World!')))
+    })
+    .catch((reason) => {
+      const { code } = reason
+      switch (code) {
+        case 'EEXIST':
+          spin.fail(
+            chalk.redBright(
+              `当前项目名${chalk.bold(
+                projectName,
+              )}所对应的文件夹已经存在，请修改项目名称或删除原文件夹后重试`,
+            ),
+          )
+          break
+        default:
+          spin.fail(reason)
+      }
     })
 }
 
