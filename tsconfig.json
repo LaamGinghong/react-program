@@ -22,5 +22,5 @@
     "forceConsistentCasingInFileNames": true,
     "pretty": true
   },
-  "exclude": ["src/templates"]
+  "exclude": ["src/templates", "lib"]
 }
